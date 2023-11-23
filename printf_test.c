@@ -16,124 +16,100 @@ int	main(void)
 	puts(BOLD "Testing PRINTF" NORMAL);
 
 	puts("\%c Prints a single character.");
-	printf("You: ");
-	you = ft_printf("%c marks the spot!", 'X');
-	printf("\nExp: ");
-	exp = printf("%c marks the spot!", 'X');
+	you = ft_printf("You: %c marks the spot!\n", 'X');
+	exp = printf("Exp: %c marks the spot!\n", 'X');
 	if (you == exp)
-		printf(GREEN "\nOK\n" NORMAL);
+		puts(GREEN "OK" NORMAL);
 	else
-		printf(RED "\nKO\n" NORMAL);
+		puts(RED "KO" NORMAL);
 	
 	puts("\%s Prints a string (as defined by the common C convention).");
-	printf("You: ");
-	you = ft_printf("Hello %s World!", "Cruel");
-	printf("\nExp: ");
-	exp = printf("Hello %s World!", "Cruel");
+	you = ft_printf("You: Hello %s World!\n", "Cruel");
+	exp = printf("Exp: Hello %s World!\n", "Cruel");
 	if (you == exp)
-		printf(GREEN "\nOK\n" NORMAL);
+		puts(GREEN "OK" NORMAL);
 	else
-		printf(RED "\nKO\n" NORMAL);
+		puts(RED "KO" NORMAL);
 	
 	puts("\%p The void * pointer argument has to be printed in hexadecimal format.");
-	printf("You: ");
-	you = ft_printf("Your pointer is %p", &you);
-	printf("\nExp: ");
-	exp = printf("Your pointer is %p", &you);
+	you = ft_printf("You: Your pointer is %p\n", &you);
+	exp = printf("Exp: Your pointer is %p\n", &you);
 	if (you == exp)
-		printf(GREEN "\nOK\n" NORMAL);
+		puts(GREEN "OK" NORMAL);
 	else
-		printf(RED "\nKO\n" NORMAL);
+		puts(RED "KO" NORMAL);
 
 	puts("\%d Prints a decimal (base 10) number.");
-	printf("You: ");
-	you = ft_printf("Zero is %d", 0.0);
-	printf("\nExp: ");
-	exp = printf("Zero is %d", 0);
+	you = ft_printf("You: Zero is %d\n", 0);
+	exp = printf("Exp: Zero is %d\n", 0);
 	if (you == exp)
-		printf(GREEN "\nOK\n" NORMAL);
+		puts(GREEN "OK" NORMAL);
 	else
-		printf(RED "\nKO\n" NORMAL);
+		puts(RED "KO" NORMAL);
 
 	puts("\%i Prints an integer in base 10.");
-	printf("You: ");
-	you = ft_printf("Zero is %i", 0);
-	printf("\nExp: ");
-	exp = printf("Zero is %i", 0);
+	you = ft_printf("You: 42 is %i\n", 42);
+	exp = printf("Exp: 42 is %i\n", 42);
 	if (you == exp)
-		printf(GREEN "\nOK\n" NORMAL);
+		puts(GREEN "OK" NORMAL);
 	else
-		printf(RED "\nKO\n" NORMAL);
+		puts(RED "KO" NORMAL);
 
 	puts("\%u Prints an unsigned decimal (base 10) number.");
-	printf("You: ");
-	you = ft_printf("Max is %u", (0 - 1));
-	printf("\nExp: ");
-	exp = printf("Max is %u", (0 - 1));
+	you = ft_printf("You: Max is %u\n", (0 - 1));
+	exp = printf("Exp: Max is %u\n", (0 - 1));
 	if (you == exp)
-		printf(GREEN "\nOK\n" NORMAL);
+		puts(GREEN "OK" NORMAL);
 	else
-		printf(RED "\nKO\n" NORMAL);
+		puts(RED "KO" NORMAL);
 
 	puts("\%x Prints a number in hexadecimal (base 16) lowercase format.");
-	printf("You: ");
-	you = ft_printf("Zero is %i", 0);
-	printf("\nExp: ");
-	exp = printf("Zero is %i", 0);
+	you = ft_printf("You: 42 is %x\n", 42);
+	exp = printf("Exp: 42 is %x\n", 42);
 	if (you == exp)
-		printf(GREEN "\nOK\n" NORMAL);
+		puts(GREEN "OK" NORMAL);
 	else
-		printf(RED "\nKO\n" NORMAL);
+		puts(RED "KO" NORMAL);
 
 	puts("\%X Prints a number in hexadecimal (base 16) uppercase format.");
-	printf("You: ");
-	you = ft_printf("Zero is %i", 0);
-	printf("\nExp: ");
-	exp = printf("Zero is %i", 0);
+	you = ft_printf("You: -666 is %X\n", -666);
+	exp = printf("Exp: -666 is %X\n", -666);
 	if (you == exp)
-		printf(GREEN "\nOK\n" NORMAL);
+		puts(GREEN "OK" NORMAL);
 	else
-		printf(RED "\nKO\n" NORMAL);
+		puts(RED "KO" NORMAL);
 
 	puts("\%\% Prints a percent sign.");
-	printf("You: ");
-	you = ft_printf("42%% is good enough!");
-	printf("\nExp: ");
-	exp = printf("42%% is good enough!");
+	you = ft_printf("You: 42%% is good enough!\n");
+	exp = printf("Exp: 42%% is good enough!\n");
 	if (you == exp)
-		printf(GREEN "\nOK\n" NORMAL);
+		puts(GREEN "OK" NORMAL);
 	else
-		printf(RED "\nKO\n" NORMAL);
+		puts(RED "KO" NORMAL);
 
 	puts("Multiple arguments 0123456789");
-	printf("You: ");
-	you = ft_printf("%i12345%d789", 0, 6);
-	printf("\nExp: ");
-	exp = printf("%i12345%d789", 0, 6);
+	you = ft_printf("You: %i12345%d789\n", 0, 6);
+	exp = printf("Exp: %i12345%d789\n", 0, 6);
 	if (you == exp)
-		printf(GREEN "\nOK\n" NORMAL);
+		puts(GREEN "OK" NORMAL);
 	else
-		printf(RED "\nKO\n" NORMAL);
+		puts(RED "KO" NORMAL);
 
 	puts("Empty string");
-	printf("You: ");
 	you = ft_printf("");
-	printf("\nExp: ");
 	exp = printf("");
 	if (you == exp)
-		printf(GREEN "\nOK\n" NORMAL);
+		puts(GREEN "OK" NORMAL);
 	else
-		printf(RED "\nKO\n" NORMAL);
+		puts(RED "KO" NORMAL);
 
-	puts("Null string with null pointer");
-	printf("You: ");
+	puts("Null string with null pointer (segfaults)");
 	you = ft_printf(NULL, NULL);
-	printf("\nExp: ");
 	exp = printf(NULL, NULL);
 	if (you == exp)
-		printf(GREEN "\nOK\n" NORMAL);
+		puts(GREEN "OK" NORMAL);
 	else
-		printf(RED "\nKO\n" NORMAL);
+		puts(RED "KO" NORMAL);
 
 	return(0);
 }
